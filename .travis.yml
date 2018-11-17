@@ -29,6 +29,6 @@ before_install:
 deploy:
   provider: script
   skip_cleanup: true
-  script: rsync -r --delete-after --quiet --rsh="ssh -p65500" $TRAVIS_BUILD_DIR/dist/front-end evian@aio.eviannow.xyz:/var/www/allinone/testfolder
+  script: rsync -r --delete-after --quiet --rsh="ssh -p65500 -o StrictHostKeyChecking=no" $TRAVIS_BUILD_DIR/dist/front-end evian@aio.eviannow.xyz:/var/www/allinone/testfolder
   on:
     branch: master
