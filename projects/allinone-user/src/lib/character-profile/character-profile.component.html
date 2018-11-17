@@ -48,6 +48,9 @@
                     <li role="presentation" *ngIf="char && char.char.stats && char.char.stats.length > 0">
                       <a href="#char_stats" id="tab_stats" role="tab" data-toggle="tab" aria-expanded="false">Stats</a>
                     </li>
+                    <li role="presentation" *ngIf="char && char.char.jobs && char.char.jobs.length > 0">
+                      <a href="#char_industry" id="tab_industry" role="tab" data-toggle="tab" aria-expanded="false">Industry</a>
+                    </li>
                     <li role="presentation" *ngIf="char && char.user && char.user.permissions">
                       <a href="#char_perms" id="tab_perms" role="tab" data-toggle="tab" aria-expanded="false">Permissions</a>
                     </li>
@@ -58,6 +61,9 @@
                     </div>
                     <div *ngIf="char && char.char.stats && char.char.stats.length > 0" role="tabpanel" class="tab-pane fade" id="char_stats" aria-labelledby="tab_stats">
                       <aio-user-character-stats [stats]="char.char.stats[0]"></aio-user-character-stats>
+                    </div>
+                    <div *ngIf="char && char.char.jobs && char.char.jobs.length > 0" role="tabpanel" class="tab-pane" id="char_industry" area-labelledby="tab_industry">
+                      <aio-common-industry-jobs [jobs]="char.char.jobs"></aio-common-industry-jobs>
                     </div>
                     <div *ngIf="char && char.user && char.user.permissions" role="tabpanel" class="tab-pane fade" id="char_perms" aria-labelledby="tab_perms">
                       <div class="row">

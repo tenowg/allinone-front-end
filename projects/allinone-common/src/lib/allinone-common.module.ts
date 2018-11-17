@@ -11,6 +11,9 @@ import { MenuItemComponent } from './menu/menuitem/menuitem.component';
 import { MenuRightComponent } from './menu/menu-right/menu-right.component';
 import { SidemenuComponent } from './menu/sidemenu/sidemenu.component';
 import { IndexComponent } from './index/index.component';
+import { IndustryJobsComponent } from './industry-jobs/industry-jobs.component';
+import { DataTablesModule } from 'angular-datatables';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,10 +27,13 @@ import { IndexComponent } from './index/index.component';
     MenuRightComponent,
     SidemenuComponent,
     IndexComponent,
+    IndustryJobsComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
+    DataTablesModule,
+    FormsModule
   ],
   exports: [
     CorpImageComponent,
@@ -39,7 +45,8 @@ import { IndexComponent } from './index/index.component';
     MenusectionComponent,
     MenuRightComponent,
     SidemenuComponent,
-    IndexComponent
+    IndexComponent,
+    IndustryJobsComponent
   ]
 })
 export class AllinoneCommonModule { }
