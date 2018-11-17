@@ -18,8 +18,6 @@ addons:
   ssh_known_hosts: 
     - aio.eviannow.xyz
     - 47.47.80.166
-    - [aio.eviannow.xyz]:65500
-    - [47.47.80.166]:65500
 before_install:
   - openssl aes-256-cbc -K $encrypted_376440fab1e4_key -iv $encrypted_376440fab1e4_iv
     -in deploy_rsa.enc -out deploy_rsa -d
