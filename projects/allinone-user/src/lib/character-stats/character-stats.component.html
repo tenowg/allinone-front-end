@@ -1,0 +1,11 @@
+<div class="row top-tiles">
+  <aio-common-info-block *ngIf="stats.character" title="Days" [count]="stats.character.days_of_activity" [icon]="'fa fa-user'" large="6" medium="6" small="12" xsmall="12">
+    <p>Number of active days.</p>
+  </aio-common-info-block>
+  <aio-common-info-block *ngIf="stats.character" title="Minutes" [count]="stats.character.minutes" [icon]="'fa fa-user'" large="6" medium="6" small="12" xsmall="12">
+    <p>Total Minutes Played</p>
+  </aio-common-info-block>
+  <aio-common-info-block *ngIf="stats.character" title="Sessions" [count]="stats.character.sessions_started" [icon]="'fa fa-user'" large="6" medium="6" small="12" xsmall="12">
+    <p>Number of Session Started</p>
+  </aio-common-info-block>
+</div>

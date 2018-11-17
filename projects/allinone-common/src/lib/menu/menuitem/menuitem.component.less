@@ -1,0 +1,42 @@
+a {
+    margin-bottom: 9px;
+    position: relative;
+    display: block;
+    padding: 3px 15px 0px;
+    //color: #E7E7E7;
+    font-weight: 500;
+}
+
+// .child_menu.active {
+//     display: block;
+// }
+ul {
+    &.nav {
+        &.child_menu {
+            &.active {
+                display: block;
+            }
+            li {
+                margin-bottom: -7px;
+                &:before {
+                    margin-top: 10px;
+                }
+                &:after {
+                    top: -2px;
+                }
+            }
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.nav {
+    &.child_menu {
+        &>li {
+            &>a {
+                font-size: 11px;
+                padding: 6px;
+            }
+        }
+    }
+}

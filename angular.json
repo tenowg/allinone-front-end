@@ -27,9 +27,22 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "src/styles.less",
+              "node_modules/bootstrap/less/bootstrap.less",
+              "node_modules/gentelella/vendors/font-awesome/css/font-awesome.min.css",
+              "node_modules/animate.css/animate.min.css",
+              "node_modules/select2/dist/css/select2.min.css",
+              "node_modules/@ng-select/ng-select/themes/default.theme.css",
+              "node_modules/datatables.net-dt/css/jquery.dataTables.css",
+              "src/assets/custom.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/select2/dist/js/select2.full.min.js",
+              "node_modules/datatables.net/js/jquery.dataTables.js",
+              "node_modules/gentelella/build/js/custom.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -127,6 +140,181 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "allinone-user": {
+      "root": "projects/allinone-user",
+      "sourceRoot": "projects/allinone-user/src",
+      "projectType": "library",
+      "prefix": "aio-user",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/allinone-user/tsconfig.lib.json",
+            "project": "projects/allinone-user/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/allinone-user/src/test.ts",
+            "tsConfig": "projects/allinone-user/tsconfig.spec.json",
+            "karmaConfig": "projects/allinone-user/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/allinone-user/tsconfig.lib.json",
+              "projects/allinone-user/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "allinone-common": {
+      "root": "projects/allinone-common",
+      "sourceRoot": "projects/allinone-common/src",
+      "projectType": "library",
+      "prefix": "aio-common",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/allinone-common/tsconfig.lib.json",
+            "project": "projects/allinone-common/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/allinone-common/src/test.ts",
+            "tsConfig": "projects/allinone-common/tsconfig.spec.json",
+            "karmaConfig": "projects/allinone-common/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/allinone-common/tsconfig.lib.json",
+              "projects/allinone-common/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "allinone-auth": {
+      "root": "projects/allinone-auth",
+      "sourceRoot": "projects/allinone-auth/src",
+      "projectType": "library",
+      "prefix": "aio-auth",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/allinone-auth/tsconfig.lib.json",
+            "project": "projects/allinone-auth/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/allinone-auth/src/test.ts",
+            "tsConfig": "projects/allinone-auth/tsconfig.spec.json",
+            "karmaConfig": "projects/allinone-auth/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/allinone-auth/tsconfig.lib.json",
+              "projects/allinone-auth/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "allinone-admin": {
+      "root": "projects/allinone-admin",
+      "sourceRoot": "projects/allinone-admin/src",
+      "projectType": "library",
+      "prefix": "aio-admin",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/allinone-admin/tsconfig.lib.json",
+            "project": "projects/allinone-admin/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/allinone-admin/src/test.ts",
+            "tsConfig": "projects/allinone-admin/tsconfig.spec.json",
+            "karmaConfig": "projects/allinone-admin/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/allinone-admin/tsconfig.lib.json",
+              "projects/allinone-admin/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "allinone-corp": {
+      "root": "projects/allinone-corp",
+      "sourceRoot": "projects/allinone-corp/src",
+      "projectType": "library",
+      "prefix": "aio-corp",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/allinone-corp/tsconfig.lib.json",
+            "project": "projects/allinone-corp/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/allinone-corp/src/test.ts",
+            "tsConfig": "projects/allinone-corp/tsconfig.spec.json",
+            "karmaConfig": "projects/allinone-corp/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/allinone-corp/tsconfig.lib.json",
+              "projects/allinone-corp/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]

@@ -1,0 +1,7 @@
+<h3>{{section.name}}</h3>
+  <ul class="nav side-menu">
+    <li *ngFor="let value of section.items" (click)="anchorClicked(value)" [class.active]="value === selectedMenu">
+      <aio-common-menuitem [value]="value" [selected]="selectedMenu"></aio-common-menuitem>
+    </li>
+  </ul>
+

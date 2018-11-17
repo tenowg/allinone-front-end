@@ -1,0 +1,100 @@
+<div>
+    <div class="page_title">
+      <div class="title_left">
+        <h3>{{char?.char.name}}</h3>
+      </div>
+      <div class="title_right">
+  
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            Character Information
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+              <div class="profile_img">
+                <div id="char-avatar" *ngIf="char">
+                  <aio-common-eve-char-image size="512" [character_id]="char.char.character_id" [show_name]="false"></aio-common-eve-char-image>
+                </div>
+              </div>
+              <h4>{{char?.char.name}}</h4>
+              <ul class="list-unstyled user_data">
+                <li>
+                  <i class="fa fa-money user-profile-icon"></i>
+                  Birthday: {{char?.char.birthday}}
+                </li>
+                <li *ngIf="char">
+                  <i class="fa fa-user user-profile-icon"></i>
+                  Gender: {{char?.char.gender}}
+                </li>
+                <li *ngIf="char">
+                  <i class="fa fa-user user-profile-icon"></i>
+                  Security: {{char?.char.security_status}}
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-12">
+              <div class="x_panel">
+                <div class="x_content">
+                  <ul id="charTabs" class="nav nav-tabs bar_tabs" role="tablist">
+                    <li role="presentation" class="active">
+                      <a href="#char_description" id="tab_description" role="tab" data-toggle="tab" aria-expanded="false">Bio</a>
+                    </li>
+                    <li role="presentation" *ngIf="char && char.char.stats && char.char.stats.length > 0">
+                      <a href="#char_stats" id="tab_stats" role="tab" data-toggle="tab" aria-expanded="false">Stats</a>
+                    </li>
+                    <li role="presentation" *ngIf="char && char.user && char.user.permissions">
+                      <a href="#char_perms" id="tab_perms" role="tab" data-toggle="tab" aria-expanded="false">Permissions</a>
+                    </li>
+                  </ul>
+                  <div id="charTabsContent" class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade active in" id="char_description" aria-labelledby="tab_description">
+                      <p *ngIf="char" [innerHtml]="char.char.description"></p>
+                    </div>
+                    <div *ngIf="char && char.char.stats && char.char.stats.length > 0" role="tabpanel" class="tab-pane fade" id="char_stats" aria-labelledby="tab_stats">
+                      <aio-user-character-stats [stats]="char.char.stats[0]"></aio-user-character-stats>
+                    </div>
+                    <div *ngIf="char && char.user && char.user.permissions" role="tabpanel" class="tab-pane fade" id="char_perms" aria-labelledby="tab_perms">
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="x_panel tile">
+                            <div class="x_title">
+                              <h3>Edit Permissions</h3>
+                              <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                              <ng-select [items]="groups"
+                                appendTo="body"
+                                bindLabel="name"
+                                multiple="true"
+                                [loading]="loading"
+                                [(ngModel)]="char.user.permissions">
+                                <ng-template ng-option-tmp let-item="item" let-index="index" let-search="searchTerm">
+                                  <div>{{item.name}}</div>
+                                  <p>{{item.description}}</p>
+                                </ng-template>
+                              </ng-select>
+                              <div class="divider"></div>
+                              <div class="text-center">
+                                <button type="button" class="btn btn-success" (click)="save()">Save</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    position: relative;
+}
+
+font {
+    &[size="12"] {
+        font-size: 12px;
+        color: #000;
+    }
+    &[size="14"] {
+        font-size: 14px;
+        color: #000;
+    }
+}
+
+.user-profile-icon {
+    width: 15px;
+}
+
+.nav-md .container.body .right_col {
+    padding: 10px 20px 39px !important;
+    min-height: calc(100vh - 39px);
+}
+
+.nav.side-menu>li.active>app-menuitem>a {
+    text-shadow: rgba(0,0,0,.25) 0 -1px 0;
+    background: linear-gradient(#334556,#2C4257),#2A3F54;
+    box-shadow: rgba(0,0,0,.25) 0 1px 0, inset rgba(255,255,255,.16) 0 1px 0;
+}
+
+footer {
+    padding: 10px 20px !important;
+}

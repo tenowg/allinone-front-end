@@ -1,0 +1,4 @@
+<a><i [class]="value.icon"></i> {{ value.name }} <span class="fa fa-chevron-down"></span></a>
+<ul class="nav child_menu" [class.active]="value.name === selected.name">
+    <li *ngFor="let item of value.items"><a [routerLink]="item.link">{{item.name}}</a></li>
+</ul>

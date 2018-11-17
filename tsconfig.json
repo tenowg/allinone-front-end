@@ -16,6 +16,38 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "allinone-user": [
+        "dist/allinone-user"
+      ],
+      "allinone-user/*": [
+        "dist/allinone-user/*"
+      ],
+      "allinone-common": [
+        "dist/allinone-common"
+      ],
+      "allinone-common/*": [
+        "dist/allinone-common/*"
+      ],
+      "allinone-auth": [
+        "dist/allinone-auth"
+      ],
+      "allinone-auth/*": [
+        "dist/allinone-auth/*"
+      ],
+      "allinone-admin": [
+        "dist/allinone-admin"
+      ],
+      "allinone-admin/*": [
+        "dist/allinone-admin/*"
+      ],
+      "allinone-corp": [
+        "dist/allinone-corp"
+      ],
+      "allinone-corp/*": [
+        "dist/allinone-corp/*"
+      ]
+    }
   }
 }

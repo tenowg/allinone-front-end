@@ -1,0 +1,66 @@
+<div>
+  <div class="page_title">
+    <div class="title_left">
+      <h3>{{corp_info?.name}} ({{corp_info?.ticker}})</h3>
+    </div>
+    <div class="title_right">
+
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_title">
+          Corporation Information
+          <small>Public</small>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+            <div class="profile_img">
+              <div id="crop-avatar" *ngIf="corp_info">
+                <aio-common-corp-image [size]="256" [(corp_id)]="corp_info.corporation_id"></aio-common-corp-image>
+              </div>
+            </div>
+            <h4>{{corp_info?.name}} ({{corp_info?.ticker}})</h4>
+            <ul class="list-unstyled user_data">
+              <li>
+                <i class="fa fa-map-marker user-profile-icon"></i>
+                <a [href]="corp_info?.url"> Website</a>
+              </li>
+              <li>
+                <i class="fa fa-money user-profile-icon"></i>
+                Tax rate: {{corp_info?.tax_rate * 100}}%
+              </li>
+              <li *ngIf="corp_info">
+                <i class="fa fa-user user-profile-icon"></i>
+                Founder: <aio-common-eve-char-image size="32" [character_id]="corp_info.creator_id"></aio-common-eve-char-image>
+              </li>
+              <li *ngIf="corp_info">
+                <i class="fa fa-user user-profile-icon"></i>
+                CEO: <aio-common-eve-char-image size="32" [character_id]="corp_info.ceo_id"></aio-common-eve-char-image>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-9 col-sm-9 col-xs-12">
+            <div class="x_panel">
+              <div class="x_content">
+                <ul id="corpTabs" class="nav nav-tabs bar_tabs" role="tablist">
+                  <li role="presentation" class="active">
+                    <a href="#corp_description" id="tab_description" role="tab" data-toggle="tab" aria-expanded="false">Description</a>
+                  </li>
+                </ul>
+                <div id="corpTabsContent" class="tab-content">
+                  <div role="tabpanel" class="tab-pane fade active in" id="corp_description" aria-labelledby="tab_description">
+                    <p *ngIf="corp_info" [innerHtml]="corp_info.description"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
