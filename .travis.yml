@@ -1,16 +1,19 @@
 language: node_js
 node_js:
-  - "11.0"
+- '11.0'
 branches:
   only:
-    - master
+  - master
 before_script:
-  - npm install -g @angular/cli
+- npm install -g @angular/cli
 script:
-  - npm install
-  - ng build --project allinone-common
-  - ng build --project allinone-user
-  - ng build --project allinone-admin
-  - ng build --project allinone-auth
-  - ng build --project allinone-corp
-  - ng build --prod
+- npm install
+- ng build --project allinone-common
+- ng build --project allinone-user
+- ng build --project allinone-admin
+- ng build --project allinone-auth
+- ng build --project allinone-corp
+- ng build --prod
+before_install:
+- openssl aes-256-cbc -K $encrypted_376440fab1e4_key -iv $encrypted_376440fab1e4_iv
+  -in deploy_rsa.enc -out deploy_rsa -d
